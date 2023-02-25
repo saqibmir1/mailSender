@@ -4,7 +4,7 @@
 
 ## How to Start:
 ```
-npm init
+npm init -y
 nmp install dotenv express googleapis multer nodemailer nodemon
 
 
