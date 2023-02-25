@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Css styles -->
+    <link rel="stylesheet" href="./index.css" />
+    <!-- Fontawesome icon library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  
+    <title>Mail Sender</title>
+    
+    <!-- google translate -->
+      <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script type="text/javascript">
+    // Define a function to initialize the Google Translate API
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'hi,ur,mr,en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google-translate');
+    }
+  </script>
+ 
+  </head>
+  <body>
+    <form action="/send_email" method="POST" enctype="multipart/form-data" style="max-width: 500px; margin: auto">
+      <h2>Mail Sender</h2>
+      <div class="input-wrapper">
+        <i class="fa fa-user icon"></i>
+
+        <input
+          class="input-field"
+          type="text"
+          placeholder="To: i.e joemama@gmail.com"
+          name="email"
+          autocomplete="off"
+          required
+        />
+      </div>
+      <div class="input-wrapper">
+        <i class="fa fa-envelope icon"></i>
+
+        <input
+          class="input-field"
+          type="text"
+          placeholder="Subject"
+          name="subject"
+          required
+        />
+      </div>
+
+      <button class="first-btn" style="background-color: transparent; border: none; font-size: 1.5em; padding: 0; float: right;">😊</button>
+
+      <div class="input-wrapper">
+        <textarea
+          class="emoji"
+          id="message"
+          name="message"
+          placeholder="Message body.."
+          style="height: 200px; width: 100%"
+          required
+        ></textarea>
+      </div>
+
+      <div class="attachment-wrapper">
+        <label for="attachment">Attachment</label>
+        <input id="attachment" name="attachment" type="file" required />
+      </div>
+
+        <!-- Create a div that allows the user to type in English and translate to Hindi, Urdu, or Marathi -->
+  <div id="my-div" contenteditable="true">
+    <p>Choose language and type here...</p>
+  </div>
+
+  <!-- Add a container for the Google Translate API dropdown -->
+  <div id="google-translate"></div>
+
+
+      <button type="submit" class="send-btn">Send Mail</button>
+    </form>
+
+    <!--emoji-->
+    <script src="vanillaEmojiPicker.js"></script>
+    <script>
+
+        new EmojiPicker({
+            trigger: [
+                {
+                    selector: '.first-btn',
+                    insertInto: ['.emoji'] // '.selector' can be used without array
+                },
+
+            ],
+            closeButton: true,
+            //specialButtons: green
+        });
+
+    </script>
+    
+  </body>
+</html>
+
