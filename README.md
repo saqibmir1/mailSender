@@ -5,5 +5,5 @@
 ### How to Start:
 ```
 npm init -y
-nmp install dotenv express googleapis multer nodemailer nodemon
+npm install dotenv express googleapis multer nodemailer nodemon
 ```
